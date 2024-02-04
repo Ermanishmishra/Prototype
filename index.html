@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let Automobiles1 = {
+    brand : "mahindra",
+    model : "bolero",
+    fuelType : "diesel",
+    NumberOfWheels : 4,
+};
+console.log(Automobiles1);
+let obj = Object.create(Automobiles1)
+
+console.log(obj);
+
+function Automobiles(brand,model,fuelType,NumberOfWheels){
+    this.brand1 = brand;
+    this.model1 = model;
+    this.fuelType = fuelType;
+    this.NumberOfWheels = NumberOfWheels;
+};
+Automobiles.prototype.State = function(color){
+    this.color = color
+};
+let p1 = new Automobiles("mahindta","bolero","diesel",4)
+
+p1.State("White")
+
+console.log(p1);
+
+</script>
