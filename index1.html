@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function Vehicle(brand,model,speed,fuelType){
+        this.brand = brand;
+        this.model = model;
+        this.speed = speed;
+        this.fuelType = fuelType;
+    }
+    
+    Vehicle.prototype.accelerate = function(speed){
+        this.speed += speed;
+        console.log(`${this.brand} ${this.model} is accelerating current speed ${this.speed}`);
+    }
+
+    Vehicle.prototype.breake = function(speed){
+        this.speed -= speed;
+        console.log(`${this.brand} ${this.model} is breaking current speed ${this.speed}`);
+
+    }
+
+    Vehicle.prototype.refuse = function(speed){
+        this.speed = 0;
+        console.log(`${this.brand} ${this.model} is refuse current speed ${this.speed}`);
+    }
+    Vehicle.prototype.LandingGear = function(speed){
+        this.speed += speed;
+        console.log(`${this.brand} ${this.model} is landing current speed ${this.speed}`);
+    }
+
+    Vehicle.prototype.TakeOff = function(speed){
+        this.speed -= speed;
+        console.log(`${this.brand} ${this.model} is takeoff with cuurent speed ${this.speed}`);
+    }
+    // this is car constructor
+    function Car(brand,model,speed,fuelType,NumberOfWeels){
+        Vehicle.call(this,brand,model,speed,fuelType,NumberOfWeels)
+        this.NumberOfWeels = NumberOfWeels || 4;
+    }
+    // this is inherit from vehicle
+
+    Car.prototype = Object.create(Vehicle.prototype)
+
+
+    let myCar = new Car("mahindra","bolero",0,"diesel",4)
+
+    console.log(myCar)
+    myCar.refuse(40)
+    console.log(myCar)
+
+    function AirPlane(brand,model,speed,fuelType,NumberOfEngine){
+        Vehicle.call(this,brand,model,speed,fuelType,NumberOfEngine)
+        this.NumberOfEngine = NumberOfEngine || 2
+    }
+
+    AirPlane.prototype = Object.create(Vehicle.prototype)
+
+    let myAirplane = new AirPlane("HAL","Bombardier",10,"air",2)
+
+    console.log(myAirplane);
+
+    myAirplane.TakeOff(20)
+    
+</script>

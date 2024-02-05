@@ -10,27 +10,27 @@
 </body>
 </html>
 <script>
-    let Automobiles1 = {
+    let Automobiles = {
     brand : "mahindra",
     model : "bolero",
     fuelType : "diesel",
     NumberOfWheels : 4,
 };
-console.log(Automobiles1);
-let obj = Object.create(Automobiles1)
+console.log(Automobiles);
+let obj = Object.create(Automobiles)
 
 console.log(obj);
 
-function Automobiles(brand,model,fuelType,NumberOfWheels){
+function Constructor(brand,model,fuelType,NumberOfWheels){
     this.brand1 = brand;
     this.model1 = model;
     this.fuelType = fuelType;
     this.NumberOfWheels = NumberOfWheels;
 };
-Automobiles.prototype.State = function(color){
+Constructor.prototype.State = function(color){
     this.color = color
 };
-let p1 = new Automobiles("mahindta","bolero","diesel",4)
+let p1 = new Constructor("mahindta","bolero","diesel",4)
 
 p1.State("White")
 
